@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+        <div class="padding">
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input type="text" required  name="name" ngModel></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Usuario</ion-label>
+            <ion-input  type="text" name="username" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input  type="text" name="password" ngModel required></ion-input>
+            </ion-item>
+         
+              <ion-input name="activity_id" type="hidden" [(ngModel)]="activity_id"></ion-input>
+          
+        
+        </div> 
+        <div padding>
+            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Registrarse</ion-button>
+        </div>
+        <div padding>
+            <ion-button  size="large" (click)="closeModal()" expand="block">Cerrar</ion-button>
+        </div>
+        </form>
+</ion-content>

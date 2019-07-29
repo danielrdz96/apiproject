@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>projects-modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="padding">
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" required  name="name" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Metodologia</ion-label>
+        <ion-input  type="text" name="methodology" ngModel required></ion-input>
+      </ion-item>
+     
+          <ion-input name="user_id" type="hidden" [(ngModel)]="user_id"></ion-input>
+      
+    
+    </div> 
+    <div padding>
+        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Registrarse</ion-button>
+    </div>
+    <div padding>
+        <ion-button  size="large" (click)="closeModal()" expand="block">Cerrar</ion-button>
+    </div>
+  </form>
+</ion-content>

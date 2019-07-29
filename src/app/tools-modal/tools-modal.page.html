@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>tools</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="padding">
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" required  name="name" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Version</ion-label>
+        <ion-input  type="text" name="version" ngModel required></ion-input>
+      </ion-item>
+      
+          <ion-input name="project_id" type="hidden" [(ngModel)]="project_id"></ion-input>
+      
+    
+    </div> 
+    <div padding>
+        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+    </div>
+    <div padding>
+        <ion-button  size="large" (click)="closeModal()" expand="block">Close</ion-button>
+    </div>
+  </form>
+</ion-content>

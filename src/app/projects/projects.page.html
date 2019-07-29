@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Proyectos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let project of projects;">
+    <ion-card-content>
+        <form #form="ngForm" (ngSubmit)="updateProject(form)">
+          <div class="padding">
+            <ion-item>
+              <ion-label>Nombre</ion-label>
+              <ion-input type="text" [(ngModel)]="project.name" required  name="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Metodologia</ion-label>
+              <ion-input  type="text" name="methodology" required [(ngModel)]="project.methodology"></ion-input>
+            </ion-item>
+            
+                <ion-input type="hidden" name="id" [(ngModel)]="project.id"></ion-input>
+        
+          </div>
+          
+          <ion-grid>
+              <ion-row>
+                <ion-col col-6>
+                    <ion-button fill="solid" type="submit" [disabled]="form.invalid" expand="full" color="primary" >actualizar</ion-button>
+                  
+                </ion-col>
+                <ion-col col-6>
+                    <ion-button fill="solid" (click)="deleteProject(form.value.id)" expand="full" color="danger" >eliminar</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          
+            <ion-button padding class="center" fill="solid" (click)="redirectToTools(form)" expand="full"  >herramientas</ion-button>
+          
+          </form>
+    </ion-card-content>
+</ion-card>
+<ion-button (click)="openModal()" expand="block">Crea nuevo proyecto</ion-button>
+
+</ion-content>
