@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Proyectos</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Proyectos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,11 +10,11 @@
         <form #form="ngForm" (ngSubmit)="updateProject(form)">
           <div class="padding">
             <ion-item>
-              <ion-label>Nombre</ion-label>
+              <ion-label><ion-icon name="briefcase"></ion-icon>Nombre</ion-label>
               <ion-input type="text" [(ngModel)]="project.name" required  name="name"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Metodologia</ion-label>
+              <ion-label><ion-icon name="book"></ion-icon>Metodologia</ion-label>
               <ion-input  type="text" name="methodology" required [(ngModel)]="project.methodology"></ion-input>
             </ion-item>
             
@@ -25,20 +25,20 @@
           <ion-grid>
               <ion-row>
                 <ion-col col-6>
-                    <ion-button fill="solid" type="submit" [disabled]="form.invalid" expand="full" color="primary" >actualizar</ion-button>
+                    <ion-button fill="solid" type="submit" [disabled]="form.invalid" expand="full" color="primary" ><ion-icon name="repeat"></ion-icon>actualizar</ion-button>
                   
                 </ion-col>
                 <ion-col col-6>
-                    <ion-button fill="solid" (click)="deleteProject(form.value.id)" expand="full" color="danger" >eliminar</ion-button>
+                    <ion-button fill="solid" (click)="deleteProject(form.value.id)" expand="full" color="danger" ><ion-icon name="remove-circle"></ion-icon>eliminar</ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
           
-            <ion-button padding class="center" fill="solid" (click)="redirectToTools(form)" expand="full"  >herramientas</ion-button>
+            <ion-button padding class="center" fill="solid" (click)="redirectToTools(form)" expand="full"  ><ion-icon name="settings"></ion-icon>herramientas</ion-button>
           
           </form>
     </ion-card-content>
 </ion-card>
-<ion-button (click)="openModal()" expand="block">Crea nuevo proyecto</ion-button>
+<ion-button color="success" (click)="openModal()" expand="block"><ion-icon name="add-circle"></ion-icon>Crea nuevo proyecto</ion-button>
 
 </ion-content>

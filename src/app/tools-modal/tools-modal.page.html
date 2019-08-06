@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tools</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Herramienta</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,7 +8,7 @@
   <form #form="ngForm" (ngSubmit)="submitForm(form)">
     <div class="padding">
       <ion-item>
-        <ion-label>Name</ion-label>
+        <ion-label>Nombre</ion-label>
         <ion-input type="text" required  name="name" ngModel></ion-input>
       </ion-item>
       <ion-item>
@@ -21,10 +21,10 @@
     
     </div> 
     <div padding>
-        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block" color="success">Registrar</ion-button>
     </div>
     <div padding>
-        <ion-button  size="large" (click)="closeModal()" expand="block">Close</ion-button>
+        <ion-button  size="large" (click)="closeModal()" expand="block" color="danger">Cerrar</ion-button>
     </div>
   </form>
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>projects-modal</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Proyecto</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,11 +8,11 @@
   <form #form="ngForm" (ngSubmit)="submitForm(form)">
     <div class="padding">
       <ion-item>
-        <ion-label>Nombre</ion-label>
+        <ion-icon name="briefcase"></ion-icon><ion-label>Nombre</ion-label>
         <ion-input type="text" required  name="name" ngModel></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Metodologia</ion-label>
+        <ion-icon name="book"></ion-icon><ion-label>Metodologia</ion-label>
         <ion-input  type="text" name="methodology" ngModel required></ion-input>
       </ion-item>
      
@@ -21,10 +21,10 @@
     
     </div> 
     <div padding>
-        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Registrarse</ion-button>
+        <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block" color="success">Registrarse</ion-button>
     </div>
     <div padding>
-        <ion-button  size="large" (click)="closeModal()" expand="block">Cerrar</ion-button>
+        <ion-button  size="large" (click)="closeModal()" expand="block" color="danger">Cerrar</ion-button>
     </div>
   </form>
 </ion-content>

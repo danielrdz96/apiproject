@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Contactos</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center >Contactos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,27 +11,27 @@
             <form #form="ngForm" (ngSubmit)="updateContact(form)">
               <div class="padding">
                 <ion-item>
-                  <ion-label>Titulo</ion-label>
+                  <ion-label><ion-icon name="contact"></ion-icon>Titulo</ion-label>
                   <ion-input type="text" [(ngModel)]="contact.title" required  name="title"></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label>Nombre</ion-label>
+                  <ion-label><ion-icon name="person"></ion-icon>Nombre</ion-label>
                   <ion-input  type="text" name="first_name" required [(ngModel)]="contact.first_name"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label>Apellido</ion-label>
+                    <ion-label><ion-icon name="person"></ion-icon>Apellido</ion-label>
                     <ion-input type="text"  name="last_name" required [(ngModel)]="contact.last_name" ></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label>Numero</ion-label>
+                    <ion-label><ion-icon name="phone-portrait"></ion-icon>Numero</ion-label>
                     <ion-input type="text" name="phone" required [(ngModel)]="contact.phone"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label>Email </ion-label>
+                    <ion-label><ion-icon name="mail"></ion-icon>Email </ion-label>
                     <ion-input type="email" name="email" required [(ngModel)]="contact.email"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label>Address</ion-label>
+                    <ion-label><ion-icon name="pin"></ion-icon>Address</ion-label>
                     <ion-input type="text" name="address" required [(ngModel)]="contact.address"></ion-input>
                 </ion-item>
                 
@@ -43,19 +43,19 @@
               <ion-grid>
                   <ion-row>
                     <ion-col col-6>
-                        <ion-button fill="solid" type="submit" [disabled]="form.invalid" expand="full" color="primary" >actualizar</ion-button>
+                        <ion-button fill="solid" type="submit" [disabled]="form.invalid" expand="full" color="primary" ><ion-icon name="repeat"></ion-icon>actualizar</ion-button>
                       
                     </ion-col>
                     <ion-col col-6>
-                        <ion-button fill="solid" (click)="deleteContact(form.value.id)" expand="full" color="danger" >eliminar</ion-button>
+                        <ion-button fill="solid" (click)="deleteContact(form.value.id)" expand="full" color="danger" ><ion-icon name="remove-circle"></ion-icon>eliminar</ion-button>
                     </ion-col>
                   </ion-row>
                 </ion-grid>
               
-                <ion-button padding class="center" fill="solid" (click)="redirectToActivities(form)" expand="full"  >actividades</ion-button>
+                <ion-button padding class="center" fill="solid" (click)="redirectToActivities(form)" expand="full"  ><ion-icon name="clipboard"></ion-icon>actividades</ion-button>
               
               </form>
         </ion-card-content>
     </ion-card>
-    <ion-button (click)="openModal()" expand="block">Crea nuevo contacto</ion-button>
+    <ion-button color="success" (click)="openModal()" expand="block"><ion-icon name="add-circle"></ion-icon>Crea nuevo contacto</ion-button>
 </ion-content>
